@@ -2,6 +2,8 @@ public class Mathematical_Operators {
     public static void main(String[] args) {
         // + - * / %
         int result = 10 + 6;
+
+        result++;
         System.out.println("Result: " + result);
 
         double result2 = (double)20 / (double)6;
