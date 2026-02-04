@@ -10,5 +10,8 @@ public class Variables {
 
             float myFloatNum = 5.99f;
             System.out.println(myFloatNum);
+
+            String firstName = "Dina ", lastName = "Bakhtiari";
+            System.out.println(firstName + lastName);
     }
 }
