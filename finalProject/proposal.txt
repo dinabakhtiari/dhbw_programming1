@@ -1,0 +1,46 @@
+World Capitals Quiz 
+Name: Dina Bakhtiari
+Email: din.bakhtiari.25@lehre.mosbach.dhbw.de
+dinabakhtiari (Discord ID)
+GitHub Repository: https://github.com/dinabakhtiari/dhbw_programming1.git
+Project: 
+1. Project Vision
+The "World Capitals Quiz Master" is an interactive desktop application designed to test and improve the user's geographical knowledge. The app fetches real-time data from an online API and challenges the user to identify the correct capital city for a given country
+2. Components & Architecture
+To ensure the project is well-organized, it will be divided into the following components:
+•	API Client: Fetches a country and its capital from a public API in JSON format to display in the quiz.
+•	Data Format: Uses JSON for country and capital info.
+•	Quiz Engine (Core Logic):
+o	Question Generator: Randomly selects a country.
+o	Option Shuffler: Creates 4 multiple-choice options (1 correct, 3 distractors).
+o	Matching Logic: Compares the user’s click with the correct answer and updates the game state.
+•	Score Manager: Keeps track of points and the number of questions remaining.
+•	GUI (JavaFX Interface): A window containing:
+o	A label for the country name.
+o	Interactive buttons for the 4 choices.
+o	A progress bar or score label.
+3. Tech Stack
+•	Programming Language: Java 
+•	UI design: JavaFX 
+•	Data handling: JSON (JavaScript Object Notation)
+•	Data Source: API
+
+4. Coding Concepts (What I will use)
+This project covers the core topics of the course:
+•	Object-Oriented Programming (OOP):
+o	Classes
+o	Encapsulation: Using private fields and getters/setters for data security.
+•	Data Structures:
+o	ArrayList
+•	Data Types
+•	Control Flow:
+o	If-Else Statements: For the Matching Logic (checking if the user clicked the right button).
+o	Loops: For iterating through the data to find random "wrong" answers.
+•	Exception Handling: Using try-catch blocks to manage potential internet connection issues (API errors).
+•	Data Manipulation
+5. Expected Results
+•	A functional desktop app where a user can play a full round of 10 questions.
+•	The ability to restart the game without closing the app.
+•	A visual feedback system (e.g., green for correct, red for wrong).
+
+
