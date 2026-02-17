@@ -1,0 +1,32 @@
+package my_own_trainings;
+
+public class AnnalynsInfiltration {
+    public static boolean canFastAttack(boolean knightIsAwake) {
+
+        return !knightIsAwake;
+    }
+
+    public static boolean canSpy(boolean knightIsAwake, boolean archerIsAwake, boolean prisonerIsAwake) {
+
+        return knightIsAwake || archerIsAwake || prisonerIsAwake;
+    }
+
+    public static boolean canSignalPrisoner(boolean archerIsAwake, boolean prisonerIsAwake) {
+
+        return prisonerIsAwake && !archerIsAwake;
+    }
+
+    public static boolean canFreePrisoner(boolean knightIsAwake, boolean archerIsAwake, boolean prisonerIsAwake, boolean petDogIsPresent) {
+
+       if (petDogIsPresent) {
+        return !archerIsAwake;
+    } else {
+        return prisonerIsAwake && !knightIsAwake && !archerIsAwake;
+        }
+    }
+
+    public static void main(String[] args) {
+        boolean result = AnnalynsInfiltration.canFreePrisoner(false, false, true, true);
+        System.out.println("Can Annalyn free the prisoner? " + result);
+    }
+}

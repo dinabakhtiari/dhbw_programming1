@@ -1,0 +1,29 @@
+{
+<<<<<<< HEAD
+    "java.debug.settings.onBuildFailureProceed": true
+
+    ,"java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "lib/jfreechart-1.5.3.jar",
+        "lib/jcommon-1.0.24.jar"
+    ]
+}
+
+=======
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "final_project/javafx-sdk-25.0.2/lib/javafx-swt.jar",
+        "final_project/javafx-sdk-25.0.2/lib/javafx.base.jar",
+        "final_project/javafx-sdk-25.0.2/lib/javafx.controls.jar",
+        "final_project/javafx-sdk-25.0.2/lib/javafx.fxml.jar",
+        "final_project/javafx-sdk-25.0.2/lib/javafx.graphics.jar",
+        "final_project/javafx-sdk-25.0.2/lib/javafx.media.jar",
+        "final_project/javafx-sdk-25.0.2/lib/javafx.swing.jar",
+        "final_project/javafx-sdk-25.0.2/lib/javafx.web.jar",
+        "final_project/javafx-sdk-25.0.2/lib/jdk.jsobject.jar",
+        "final_project/javafx-sdk-25.0.2/lib/jfx.incubator.input.jar",
+        "final_project/javafx-sdk-25.0.2/lib/jfx.incubator.richtext.jar"
+    ]
+}
+>>>>>>> 9625f06 (create final project file and add javafx sdk and refrenced libaries to it)
