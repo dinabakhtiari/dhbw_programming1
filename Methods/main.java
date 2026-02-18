@@ -14,6 +14,13 @@ public class main {
    //   return end;
   //  }
  // }
+ static int factorial(int n) {
+    if (n > 1) {
+      return n * factorial(n - 1);
+    } else {
+      return 1;
+    }
+  }
  static void countdown(int n) {
     if (n > 0) {
       System.out.print(n + " ");
@@ -22,6 +29,7 @@ public class main {
   }
   public static void main(String[] args) {
    countdown(5);
+   System.out.println("Factorial of 5 is " + factorial(5));
   }
 }
 
