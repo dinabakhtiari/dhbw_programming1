@@ -27,9 +27,15 @@ public class main {
       countdown(n - 1);
     }
   }
+  public static double calculateArea(double radius) {
+        return Math.PI * radius * radius;
+    }
+
   public static void main(String[] args) {
-   countdown(5);
-   System.out.println("Factorial of 5 is " + factorial(5));
+   double r = 5;
+   double area = calculateArea(r);
+   System.out.println("Area of circle with radius " + r + " is: " + area);
+   // System.out.println("Sum of first 5 natural numbers: " + sum(
   }
 }
 
