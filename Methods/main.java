@@ -7,16 +7,21 @@ public class main {
     //  return 0;
    // }
   //}
-public static int sum(int start, int end) {
-    if (end > start) {
-      return end + sum(start, end - 1);
-    } else {
-      return end;
+//public static int sum(int start, int end) {
+   // if (end > start) {
+   //   return end + sum(start, end - 1);
+  //  } else {
+   //   return end;
+  //  }
+ // }
+ static void countdown(int n) {
+    if (n > 0) {
+      System.out.print(n + " ");
+      countdown(n - 1);
     }
   }
   public static void main(String[] args) {
-   int result = sum(5, 10);
-    System.out.println(result);
+   countdown(5);
   }
 }
 
