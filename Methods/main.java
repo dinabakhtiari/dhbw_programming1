@@ -14,22 +14,22 @@ public class main {
    //   return end;
   //  }
  // }
- static int factorial(int n) {
-    if (n > 1) {
-      return n * factorial(n - 1);
-    } else {
-      return 1;
-    }
-  }
- static void countdown(int n) {
-    if (n > 0) {
-      System.out.print(n + " ");
-      countdown(n - 1);
-    }
-  }
-  public static double calculateArea(double radius) {
-        return Math.PI * radius * radius;
-    }
+ //static int factorial(int n) {
+  //  if (n > 1) {
+     // return n * factorial(n - 1);
+   // } else {
+   //   return 1;
+  //  }
+ // }
+// static void countdown(int n) {
+ //   if (n > 0) {
+   //   System.out.print(n + " ");
+   //   countdown(n - 1);
+   // }
+ // }
+ // public static double calculateArea(double radius) {
+ //       return Math.PI * radius * radius;
+  //  }
 
 static int fibonacci(int n) {
     if (n <= 1) {
@@ -40,10 +40,21 @@ static int fibonacci(int n) {
   }
 
   public static void main(String[] args) {
-   for (int i = 0; i < 10; i++) {
-        System.out.println("Fibonacci of " + i + ": " + fibonacci(i));
-       // System.out.println("Sum of first 5 natural numbers: " + sum(
-      }
-   }
+    System.out.println("-----------------------------------");
+
+        
+        for (int i = 0; i <= 20; i++) {
+            
+            long startTime = System.nanoTime();          
+
+            int result = fibonacci(i);           
+    
+            long endTime = System.nanoTime();
+ 
+            long duration = endTime - startTime;
+            
+            System.out.println(i + "\t" + result + "\t" + duration);
+        }
+  }
 }
 
