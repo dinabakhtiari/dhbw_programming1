@@ -31,11 +31,19 @@ public class main {
         return Math.PI * radius * radius;
     }
 
-  public static void main(String[] args) {
-   double r = 5;
-   double area = calculateArea(r);
-   System.out.println("Area of circle with radius " + r + " is: " + area);
-   // System.out.println("Sum of first 5 natural numbers: " + sum(
+static int fibonacci(int n) {
+    if (n <= 1) {
+      return n;
+    } else {
+      return fibonacci(n - 1) + fibonacci(n - 2);
+    }
   }
+
+  public static void main(String[] args) {
+   for (int i = 0; i < 10; i++) {
+        System.out.println("Fibonacci of " + i + ": " + fibonacci(i));
+       // System.out.println("Sum of first 5 natural numbers: " + sum(
+      }
+   }
 }
 
