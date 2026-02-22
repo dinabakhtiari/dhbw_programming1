@@ -11,6 +11,11 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <Label fx:id="countryLabel"/>
+    <Button fx:id="btn1" minWidth="200" onAction="#handleAnswer"/>
+    <Button fx:id="btn2" minWidth="200" onAction="#handleAnswer"/>
+    <Button fx:id="btn3" minWidth="200" onAction="#handleAnswer"/>
+    <Button fx:id="btn4" minWidth="200" onAction="#handleAnswer"/>
+
+    <Label fx:id="scoreLabel" text="Score: 0" style="-fx-text-fill: green;"/>
 </VBox>
