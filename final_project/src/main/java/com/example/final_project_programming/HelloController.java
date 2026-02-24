@@ -21,9 +21,14 @@ public class HelloController {
     @FXML
     private Button btn1, btn2, btn3, btn4;
 
+    @FXML
+    private Button restartButton;
+
     private ArrayList<Country> allCountries;
     private Country currentQuestion;
     private int score = 0;
+    private int questionCount = 0;
+    private final int max_questions = 10;
 
     public void initialize() {
         ApiClient client = new ApiClient();
@@ -35,6 +40,7 @@ public class HelloController {
     private void handleAnswer(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
         String selectedAnswer = clickedButton.getText();
+        questionCount++;
 
         if (currentQuestion != null && selectedAnswer.equals(currentQuestion.getCapital())) {
             score++;
@@ -46,7 +52,48 @@ public class HelloController {
             messageLabel.setStyle("-fx-text-fill: red;");
         }
 
+        if (questionCount >= max_questions) {
+            finishGame();
+        } else {
+            nextQuestion();
+        }
+    }
+
+    private void finishGame() {
+        messageLabel.setText("Game Over! Final Score: " + score + " / " + max_questions);
+        messageLabel.setStyle("-fx-text-fill: #2c3e50; -fx-font-weight: bold;");
+
+        btn1.setDisable(true);
+        btn2.setDisable(true);
+        btn3.setDisable(true);
+        btn4.setDisable(true);
+
+        restartButton.setVisible(true);
+        restartButton.setManaged(true);
+    }
+
+    @FXML
+    private void handleRestart(ActionEvent event) {
+        score = 0;
+        questionCount = 0;
+        scoreLabel.setText("Score: 0");
+        messageLabel.setText("Game Restarted!");
+        messageLabel.setStyle("-fx-text-fill: blue;");
+
+        btn1.setDisable(false);
+        btn2.setDisable(false);
+        btn3.setDisable(false);
+        btn4.setDisable(false);
+
+        restartButton.setVisible(false);
+        restartButton.setManaged(false);
+
         nextQuestion();
+    }
+
+    @FXML
+    private void handleExit(ActionEvent event) {
+        System.exit(0);
     }
 
     public void nextQuestion() {
