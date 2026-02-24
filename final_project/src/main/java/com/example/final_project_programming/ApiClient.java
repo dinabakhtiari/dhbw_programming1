@@ -18,20 +18,22 @@ public class ApiClient {
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder().uri(URI.create(API_URL)).build();
+            String responseBody = client.send(request, HttpResponse.BodyHandlers.ofString()).body();
 
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            com.google.gson.JsonArray rootArray = com.google.gson.JsonParser.parseString(responseBody).getAsJsonArray();
 
-            Gson gson = new Gson();
-            List<Map<String, Object>> rawData = gson.fromJson(response.body(),
-                    new TypeToken<List<Map<String, Object>>>(){}.getType());
+            for (int i = 0; i < rootArray.size(); i++) {
+                com.google.gson.JsonObject countryObject = rootArray.get(i).getAsJsonObject();
 
-            for (Map<String, Object> entry : rawData) {
-                Map<String, Object> nameMap = (Map<String, Object>) entry.get("name");
-                String commonName = (String) nameMap.get("common");
-                List<String> capitals = (List<String>) entry.get("capital");
+                String name = countryObject.get("name").getAsJsonObject().get("common").getAsString();
 
-                if (capitals != null && !capitals.isEmpty()) {
-                    countries.add(new Country(commonName, capitals.get(0)));
+                if (countryObject.has("capital") && !countryObject.get("capital").isJsonNull()) {
+                    com.google.gson.JsonArray capitalArray = countryObject.get("capital").getAsJsonArray();
+                    if (capitalArray.size() > 0) {
+                        String capital = capitalArray.get(0).getAsString();
+
+                        countries.add(new Country(name, capital));
+                    }
                 }
             }
         } catch (Exception e) {

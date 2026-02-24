@@ -13,6 +13,9 @@ public class HelloController {
     private Label countryLabel;
 
     @FXML
+    private Label messageLabel;
+
+    @FXML
     private Label scoreLabel;
 
     @FXML
@@ -36,16 +39,19 @@ public class HelloController {
         if (currentQuestion != null && selectedAnswer.equals(currentQuestion.getCapital())) {
             score++;
             scoreLabel.setText("Score: " + score);
-            System.out.println("Correct!");
+            messageLabel.setText("Correct!");
+            messageLabel.setStyle("-fx-text-fill: green;");
         } else {
-            System.out.println("Wrong! Correct answer was: " + currentQuestion.getCapital());
+            messageLabel.setText("Wrong! Correct answer was: " + currentQuestion.getCapital());
+            messageLabel.setStyle("-fx-text-fill: red;");
         }
 
         nextQuestion();
     }
 
     public void nextQuestion() {
-        if (allCountries == null || allCountries.isEmpty()) return;
+        if (allCountries == null || allCountries.isEmpty())
+            return;
 
         Random rand = new Random();
         currentQuestion = allCountries.get(rand.nextInt(allCountries.size()));

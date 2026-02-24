@@ -17,5 +17,6 @@
     <Button fx:id="btn3" minWidth="200" onAction="#handleAnswer"/>
     <Button fx:id="btn4" minWidth="200" onAction="#handleAnswer"/>
 
+    <Label fx:id="messageLabel" text="" style="-fx-text-fill: blue; -fx-font-size: 14px;"/>
     <Label fx:id="scoreLabel" text="Score: 0" style="-fx-text-fill: green;"/>
 </VBox>
